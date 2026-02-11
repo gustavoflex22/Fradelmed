@@ -3,6 +3,20 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+/**
+ * Plugins que devem ficar desativados em cenários específicos de checkout.
+ *
+ * Mantido em função única para evitar duplicação e garantir fácil revisão.
+ *
+ * @return string[]
+ */
+function fradelmed_checkout_blocked_plugins() {
+    return array(
+        'fraud-and-scam-detection-for-woocommerce/fraud-scam-detection-woocommerce.php',
+        'woo-checkout-field-editor-pro/checkout-form-designer.php',
+    );
+}
+
 // Theme setup.
 function fradelmed_theme_setup() {
     add_theme_support( 'title-tag' );
@@ -47,10 +61,7 @@ function fradelmed_filter_active_plugins_for_checkout( $plugins ) {
         return $plugins;
     }
 
-    $blocked = array(
-        'fraud-and-scam-detection-for-woocommerce/fraud-scam-detection-woocommerce.php',
-        'woo-checkout-field-editor-pro/checkout-form-designer.php',
-    );
+    $blocked = fradelmed_checkout_blocked_plugins();
 
     return array_values( array_diff( $plugins, $blocked ) );
 }
@@ -62,10 +73,7 @@ function fradelmed_filter_sitewide_plugins_for_checkout( $plugins ) {
         return $plugins;
     }
 
-    $blocked = array(
-        'fraud-and-scam-detection-for-woocommerce/fraud-scam-detection-woocommerce.php',
-        'woo-checkout-field-editor-pro/checkout-form-designer.php',
-    );
+    $blocked = fradelmed_checkout_blocked_plugins();
 
     foreach ( $blocked as $plugin_file ) {
         if ( isset( $plugins[ $plugin_file ] ) ) {
@@ -604,30 +612,41 @@ function fradelmed_use_custom_product_archive_template( $template ) {
     return $template;
 }
 add_filter( 'template_include', 'fradelmed_use_custom_product_archive_template', 99 );
-// Desliga Heartbeat no FRONT-END (para parar requests em loop quando logado)
-add_action('init', function () {
-  if (!is_admin()) {
-    wp_deregister_script('heartbeat');
-    wp_register_script('heartbeat', false);
-  }
-}, 1);
-add_action('wp_enqueue_scripts', function () {
-    if (!is_front_page() && !is_home()) {
+
+/**
+ * Desliga Heartbeat no front-end para evitar requisições em loop quando logado.
+ */
+function fradelmed_disable_frontend_heartbeat() {
+    if ( is_admin() ) {
+        return;
+    }
+
+    wp_deregister_script( 'heartbeat' );
+    wp_register_script( 'heartbeat', false );
+}
+add_action( 'init', 'fradelmed_disable_frontend_heartbeat', 1 );
+
+/**
+ * Carrega ajustes de vídeo/hero para iOS apenas na home.
+ */
+function fradelmed_enqueue_ios_hero_fix() {
+    if ( ! is_front_page() && ! is_home() ) {
         return;
     }
 
     wp_enqueue_style(
         'fradel-ios-hero-fix',
         get_stylesheet_directory_uri() . '/assets/css/ios-hero-fix.css',
-        [],
+        array(),
         '1.0.4'
     );
 
     wp_enqueue_script(
         'fradel-ios-hero-fix',
         get_stylesheet_directory_uri() . '/assets/js/ios-hero-fix.js',
-        [],
+        array(),
         '1.0.4',
         true
     );
-}, 99);
+}
+add_action( 'wp_enqueue_scripts', 'fradelmed_enqueue_ios_hero_fix', 99 );
