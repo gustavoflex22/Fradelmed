@@ -1,0 +1,69 @@
+@media (max-width: 768px) {
+  body.home .site-main video,
+  body.home .site-main .hero video,
+  body.home .site-main .hero--video video,
+  body.home .hero video,
+  body.home .hero--video video {
+    pointer-events: none !important;
+    background: transparent !important;
+  }
+
+  body.home .site-main video::-webkit-media-controls,
+  body.home .site-main video::-webkit-media-controls-enclosure,
+  body.home .site-main video::-webkit-media-controls-panel,
+  body.home .site-main video::-webkit-media-controls-start-playback-button,
+  body.home .site-main video::-webkit-media-controls-play-button,
+  body.home .site-main video::-webkit-media-controls-overlay-play-button,
+  body.home .hero video::-webkit-media-controls,
+  body.home .hero video::-webkit-media-controls-enclosure,
+  body.home .hero video::-webkit-media-controls-panel,
+  body.home .hero video::-webkit-media-controls-start-playback-button,
+  body.home .hero video::-webkit-media-controls-play-button,
+  body.home .hero video::-webkit-media-controls-overlay-play-button,
+  body.home .hero--video video::-webkit-media-controls,
+  body.home .hero--video video::-webkit-media-controls-enclosure,
+  body.home .hero--video video::-webkit-media-controls-panel,
+  body.home .hero--video video::-webkit-media-controls-start-playback-button,
+  body.home .hero--video video::-webkit-media-controls-play-button,
+  body.home .hero--video video::-webkit-media-controls-overlay-play-button {
+    display: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+  }
+
+  body.home .site-main .plyr__control--overlaid,
+  body.home .site-main .vjs-big-play-button,
+  body.home .site-main .mejs__overlay,
+  body.home .site-main .mejs__overlay-button,
+  body.home .site-main .wp-video-play-icon,
+  body.home .site-main .elementor-custom-embed-play,
+  body.home .site-main .ytp-large-play-button,
+  body.home .site-main [class*="play-button"],
+  body.home .site-main [class*="video-play"],
+  body.home .site-main [id*="play"],
+  body.home .hero .plyr__control--overlaid,
+  body.home .hero .vjs-big-play-button,
+  body.home .hero .mejs__overlay,
+  body.home .hero .mejs__overlay-button,
+  body.home .hero .wp-video-play-icon,
+  body.home .hero .elementor-custom-embed-play,
+  body.home .hero .ytp-large-play-button,
+  body.home .hero [class*="play-button"],
+  body.home .hero [class*="video-play"],
+  body.home .hero [id*="play"],
+  body.home .hero--video .plyr__control--overlaid,
+  body.home .hero--video .vjs-big-play-button,
+  body.home .hero--video .mejs__overlay,
+  body.home .hero--video .mejs__overlay-button,
+  body.home .hero--video .wp-video-play-icon,
+  body.home .hero--video .elementor-custom-embed-play,
+  body.home .hero--video .ytp-large-play-button,
+  body.home .hero--video [class*="play-button"],
+  body.home .hero--video [class*="video-play"],
+  body.home .hero--video [id*="play"] {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}

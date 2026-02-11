@@ -1,0 +1,93 @@
+/*
+Theme Name: Fradel Med
+Theme URI: http://fradel-med.local
+Author: Vinicius
+Description: Tema WordPress da Fradel Med baseado no layout HTML original.
+Version: 1.0
+Text Domain: fradelmed-theme
+*/
+/* ====== PÁGINAS DE PRODUTO – FRADAL MED ====== */
+
+/* Hero menor, sem textão */
+.page-hero.page-hero--minimal {
+  padding: 48px 0 24px;
+}
+
+.page-hero.page-hero--minimal .page-hero__content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.page-hero.page-hero--minimal .eyebrow {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+
+.page-hero.page-hero--minimal h1 {
+  font-size: 1.9rem;
+  margin: 0;
+}
+
+/* Seção de produtos */
+.page-products {
+  padding: 16px 0 72px;
+}
+
+/* Barra de info acima da grade (pode sumir se quiser) */
+.page-products__toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.page-products__info {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+/* Grade responsiva tipo vitrine */
+.page-products__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+/* Card de produto */
+.product-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.10);
+}
+
+.product-card__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.product-card__title {
+  font-size: 1rem;
+  margin: 0 0 2px;
+}
+
+.product-card__meta {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+}
