@@ -1979,6 +1979,11 @@ body.woocommerce-checkout .site-header {
   max-width: 360px;
 }
 
+.site-footer .contact-detail--nowrap {
+  white-space: nowrap;
+  word-break: keep-all;
+}
+
 @media (max-width: 700px) {
   .site-footer .contact-text {
     grid-template-columns: 1fr;

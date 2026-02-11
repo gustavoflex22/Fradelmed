@@ -40,7 +40,7 @@
             <i class="ph ph-envelope-simple"></i>
             <span class="contact-text">
               <span class="contact-label">Email</span>
-              <span class="contact-detail">sac@fradel-med.com.br</span>
+              <span class="contact-detail contact-detail--nowrap">sac@fradel-med.com.br</span>
             </span>
           </li>
           <li class="contact-item">
