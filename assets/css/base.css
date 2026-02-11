@@ -1898,6 +1898,23 @@ body.woocommerce-checkout .site-header {
   }
 }
 
+@media (min-width: 1200px) {
+  .site-footer .container {
+    max-width: 1400px;
+    padding-inline: 32px;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: 1.1fr 1fr 1.1fr 0.9fr;
+    column-gap: 2.5rem;
+    align-items: start;
+  }
+
+  .site-footer .contact-text {
+    grid-template-columns: 135px 1fr;
+  }
+}
+
 .site-footer__bottom {
   border-top: 1px solid rgba(255,255,255,.15);
   padding: .9rem 0;
