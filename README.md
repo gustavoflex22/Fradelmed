@@ -1,4 +1,4 @@
-# Fradel-Med (Showcase)
+# Fradel-Med Website
 
 Tema WordPress customizado para a Fradel-Med, desenvolvido como projeto de **design + frontend + experiência de e-commerce** para exibição técnica no GitHub. Este repositório é de portfólio/demonstração.
 
@@ -67,7 +67,7 @@ Fradel-med-theme/
 
 ---
 
-## Como visualizar
+## Como visualizar o site- https://fradelmed.com.br/
 1. Suba um ambiente WordPress 6.x+ com WooCommerce.
 2. Copie o tema para `wp-content/themes/`.
 3. Ative pelo painel e navegue pela home/loja para ver os componentes.
