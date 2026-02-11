@@ -1980,8 +1980,11 @@ body.woocommerce-checkout .site-header {
 }
 
 .site-footer .contact-detail--nowrap {
-  white-space: nowrap;
-  word-break: keep-all;
+  display: inline-block;
+  max-width: none;
+  white-space: nowrap !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
 }
 
 @media (max-width: 700px) {
